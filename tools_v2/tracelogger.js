@@ -180,7 +180,8 @@ DrawCanvas.prototype.drawQueue = function() {
     queuestatus.innerHTML = "Events in current drawQueue: "
         + this.drawQueue.length
         + " and in futureDrawQueue: "
-        + this.futureDrawQueue.length;
+        + this.futureDrawQueue.length
+        + " Threshold = " + this.drawThreshold;
   var queue = this.drawQueue.splice(0,10000);
   for (var i=0; i<queue.length; i++) {
     this.drawItem(queue[i])
