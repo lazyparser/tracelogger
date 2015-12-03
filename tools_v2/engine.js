@@ -146,7 +146,7 @@ DataTree.prototype.childs = function(id) {
   if (!this.hasChilds(id))
     return [];
 
-  var childs = []  
+  var childs = []
   var i = this.firstChild(id);
   while (true) {
     childs[childs.length] = i;
@@ -318,6 +318,7 @@ Overview.prototype.processTreeItem = function(script, id) {
     if (!this.scriptOverview[script][info])
         this.scriptOverview[script][info] = 0;
     this.scriptOverview[script][info] += time;
+    console.log(script + "\t" + info + "\t" + time);
   }
 }
 
@@ -329,7 +330,7 @@ Overview.prototype.processQueue = function () {
 
   if (this.settings.chunk_cb)
     this.settings.chunk_cb(this);
-  
+
   if (this.queue.length > 0) {
     setTimeout(Overview.prototype.processQueue.bind(this), 1);
     return;
@@ -356,7 +357,7 @@ Overview.prototype.processQueueSeq = function () {
 
     if (this.settings.chunk_cb)
       this.settings.chunk_cb(this);
-    
+
     if (this.queue.length > 0)
       continue;
 
